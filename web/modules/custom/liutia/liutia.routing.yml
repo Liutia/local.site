@@ -1,5 +1,5 @@
 liutia.first_page:
-  path: 'liutia/cats'
+  path: 'liutia/catss'
   defaults:
     _controller: '\Drupal\liutia\Controller\FirstPageController::content'
     _title: 'C.A.T.S'
