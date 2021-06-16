@@ -1,0 +1,15 @@
+#suppernavbar{
+    background-color: rgb(238, 195, 103);
+}
+
+#navbar{
+    background-color: rgb(0, 0, 0);
+}
+/* .messages__wrapper .alert.alert-danger.alert-dismissible .item-list.item-list--messages .item.item--message{
+  display: none;
+} */
+#liutia-exform-form{
+  padding: 35px;
+  background: lightgrey;
+  border-radius: 50px;
+}
