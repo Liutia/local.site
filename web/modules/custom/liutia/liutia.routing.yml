@@ -1,0 +1,7 @@
+drupalbook.first_page:
+  path: 'liutia/cats'
+  defaults:
+    _controller: '\Drupal\liutia\Controller\FirstPageController::content'
+    _title: 'C.A.T.S'
+  requirements:
+    _permission: 'access content'
