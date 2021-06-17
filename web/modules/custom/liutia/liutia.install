@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * Implements hook_schema()
+ */
+function liutia_schema() {
+
+  # Database example
+  $schema['liutia'] = array(                   // Название таблицы
+    'description' => 'Database liutia',            // Описание таблицы
+    'fields' => array(                              // Массив с колонками таблицы
+      'id' => array(                                // Название колонки
+        'description' => 'ID',                      // Описание колонки
+        'type' => 'serial',                         // Тип данных
+        'unsigned' => TRUE,                         // Unsigned, по умолчанию FALSE
+        'not null' => TRUE,                         // Проверка на 0
+       ),
+      'title' => array(
+        'description' => 'Cat name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'email' => array(
+        'description' => 'Cat email',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'image' => array(
+        'description' => 'Cat image',
+        'type' => 'int',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'timestamp' => array(
+        'description' => 'Timestamp',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}
