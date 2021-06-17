@@ -47,6 +47,22 @@ class ExForm extends FormBase {
        'event' => 'keyup',
      ]
    );
+
+   $form['message3'] = [
+     '#type' => 'markup',
+     '#markup' => '<div class="result_image"></div>',
+   ];
+
+   $form['image'] = [
+     '#type' => 'managed_file',
+     '#title' => t('Cat photo'),
+     '#required' => TRUE,
+     '#upload_validators' => array(
+       'file_validate_extensions' => array('png jpg jpeg'),
+       'file_validate_size' => array(2097152),
+     ),
+   ];
+
    $form['action'] = [
      '#type' => 'submit',
      '#value' => $this->t('Add cat'),
@@ -124,6 +140,36 @@ class ExForm extends FormBase {
        )
      );
    }
+
+   $image = $form_state->getValue('image');
+
+   if ($image > 2097152) {
+     $response->addCommand(
+       new HtmlCommand(
+         '.result_image',
+         '<div class="my_top_message">' . $this->t('Not correct image')
+       )
+     );
+   }
+   if ($image <= 0) {
+     $response->addCommand(
+       new HtmlCommand(
+         '.result_image',
+         '<div class="my_top_message">' . $this->t('Not correct image')
+       )
+     );
+   }
+   if ($image == null) {
+     $response->addCommand(
+       new HtmlCommand(
+         '.result_image',
+         '<div class="my_top_message">' . $this->t('Not correct image')
+       )
+     );
+   }
+
+
+
 
    return $response;
  }
