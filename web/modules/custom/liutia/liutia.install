@@ -1,51 +1,49 @@
 <?php
-
-/**
- * Implements hook_schema()
- */
 function liutia_schema() {
-
-  # Database example
-  $schema['liutia'] = array(                   // Название таблицы
-    'description' => 'Database liutia',            // Описание таблицы
-    'fields' => array(                              // Массив с колонками таблицы
-      'id' => array(                                // Название колонки
-        'description' => 'ID',                      // Описание колонки
-        'type' => 'serial',                         // Тип данных
-        'unsigned' => TRUE,                         // Unsigned, по умолчанию FALSE
-        'not null' => TRUE,                         // Проверка на 0
-       ),
-      'title' => array(
-        'description' => 'Cat name',
-        'type' => 'varchar',
-        'length' => 255,
+  $schema['liutia'] = array(
+    'description' => 'stores email, name and uid for cats',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the cat.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
         'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'The {users}.uid that added this cat',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'name' => array(
+        'description' => "User\'s cat name.",
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
         'default' => '',
       ),
-      'email' => array(
-        'description' => 'Cat email',
+      'mail' => array(
+        'description' => "User\'s email address.",
         'type' => 'varchar',
-        'length' => 255,
-        'not null' => TRUE,
+        'length' => 64,
+        'not null' => FALSE,
         'default' => '',
       ),
       'image' => array(
-        'description' => 'Cat image',
+        'description' => "User\'s cat picture.",
         'type' => 'int',
-        'length' => 255,
         'not null' => TRUE,
         'default' => 0,
       ),
-      'timestamp' => array(
-        'description' => 'Timestamp',
-        'type' => 'int',
-        'unsigned' => TRUE,
-        'not null' => TRUE,
-        'default' => 0,
+      'created' => array(
+        'description' => 'Timestamp when cat was submitted.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
       ),
     ),
     'primary key' => array('id'),
   );
-
   return $schema;
 }

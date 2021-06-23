@@ -8,16 +8,22 @@
 .messages__wrapper .alert.alert-danger.alert-dismissible .item-list.item-list--messages .item.item--message{
   display: none;
 }
-#liutia-exform-form{
+#cat-form, .table-responsive{
   padding: 35px;
   background: lightgrey;
   border-radius: 50px;
+  margin-bottom: 30px;
 }
+
 .input-group{
   width: 100%;
 }
 .page-header{
   text-align: center;
 }
-
-
+.alert.alert-danger.alert-dismissible, .messages__wrapper, .input-group-addon{
+  display: none;
+}
+#form-system-messages{
+  display: none;
+}

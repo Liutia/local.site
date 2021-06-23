@@ -1,0 +1,100 @@
+#navbar-main {
+  max-width: 1250px;
+  margin: 40px auto 0;
+  width: 100%;
+  padding: 0;
+  background: $white_color;
+  position: relative;
+  z-index: 10;
+  .nav-link {
+    color: $black_color;
+    text-transform: uppercase;
+    padding: 0 6px;
+  }
+  .block-block-content6d119b24-f959-4782-8896-58d7285e2033 {
+    a {
+      padding: 0 5px;
+    }
+  }
+  .block-block-contentd5ed5937-e86e-46eb-a0ed-c0c3c72100e5 {
+    text-align: center;
+    font-size: 20px;
+    background-color: $black_color;
+    .field--name-field-headline-brand {
+      color: $blue_color;
+      font-size: 32px;
+      padding: 15px 35px 0;
+    }
+    .field--name-field-slogan {
+      color: #CCC;
+      padding: 0 10px 16px;
+      font-size: 15px;
+    }
+  }
+  .block-block-content546c69d2-bce0-4c3f-a024-4536240d887d {
+    display: block;
+    margin: -10px 0 0 3%;
+  }
+  .form-submit {
+    background-color: $white_color;
+    border: 1px solid $gray_color;
+    margin: 0 0 0 -10px;
+    border-radius: 0;
+    color: $black_color;
+    font-size: 0;
+    background-image: url("../images/search.png");
+    height: 38px;
+    width: 38px;
+    padding: 11px;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    &:focus, &:hover, &:active {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  .form-type-search {
+    max-width: 350px;
+    input {
+      max-width: 200px;
+      border-radius: 0;
+      border: 1px solid $gray_color;
+      &:focus, &:hover, &:active {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+  .block-block-content6d119b24-f959-4782-8896-58d7285e2033 {
+    margin: 16px 0 0 0;
+  }
+  .search-block-form {
+    margin: 8px 0 0 0;
+  }
+}
+.featured-top {
+  margin-top: -140px;
+  background: no-repeat center url("../images/header.png");
+  min-height: 90VH;
+  .block-block-content2ff5cd50-2f2e-4998-97d2-cce56656fd78 {
+    padding: 45VH 52% 1.25rem 15%;
+    .field--name-field-headline-white {
+      color: $white_color;
+      font-size: 60px;
+      line-height: 52px;
+      text-transform: uppercase;
+    }
+    .field--name-field-headline-black {
+      color: #222;
+      font-size: 48px;
+      line-height: 52px;
+      text-transform: uppercase;
+    }
+    .field--type-text-with-summary {
+      color: $blue_color;
+      text-transform: uppercase;
+      line-height: 14px;
+    }
+  }
+}

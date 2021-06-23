@@ -1,0 +1,109 @@
+.toast-wrapper {
+  visibility: hidden;
+}
+.contact-container {
+  .section {
+    display: flex;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+    .block-webform-block {
+      flex: 50%;
+      width: 50%;
+      input::placeholder, textarea::placeholder {
+        text-transform: uppercase;
+      }
+      .form-control {
+        padding: 25px 10px;
+        border-radius: 0;
+      }
+      button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        text-transform: uppercase;
+        background-color: #ff3232;
+        border: none;
+      }
+      .form-textarea-wrapper .form-control {
+        padding: 10px 10px 60px;
+      }
+    }
+    .block-block-content0b9ee6a7-1e18-4d54-8146-60c448d1c6ff {
+      flex: 50%;
+      width: 50%;
+      padding: 0 10px;
+      h2 {
+        font-size: 16px;
+        text-align: left;
+        font-weight: 700;
+      }
+      a {
+        color: $black_color;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: none;
+        &:hover, &:active, &focus {
+          text-decoration: none;
+        }
+      }
+    }
+    > hr {
+      position: absolute;
+      width: 36px;
+      border-bottom: 4px solid $gray_color;
+      top: 30px;
+      left: 48%;
+    }
+    > h2 {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 80px;
+    }
+  }
+}
+.cat-form {
+  .alert-danger {
+    padding: 20px;
+    .list-group-item {
+      background-color: #ff4444;
+    }
+  }
+  input {
+    padding: 1.5625rem 0.625rem;
+    border-radius: 0;
+  }
+  button {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding: 0.9375rem 1.25rem;
+    text-transform: uppercase;
+    background-color: #ff3232;
+    border: none;
+  }
+  .form-required {
+    margin-top: 10px;
+  }
+  #form-system-messages {
+    button {
+      background-color: transparent;
+      margin-top: 5px;
+    }
+  }
+  .form-file {
+    padding: 3px 5px 0;
+    width: 300px;
+  }
+  .file--image {
+    margin-right: 55px;
+  }
+  .messages--error {
+    background-color: #ff4444;
+    padding: 12px;
+    color: #FFF;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+}
