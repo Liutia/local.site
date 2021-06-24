@@ -1,4 +1,4 @@
-anzy.cats_page:
+liutia.cats_page:
   path: '/liutia/cats'
   defaults:
     _controller: '\Drupal\liutia\Controller\LiutiaController::report'
