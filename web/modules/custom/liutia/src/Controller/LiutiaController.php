@@ -74,7 +74,7 @@ class LiutiaController extends ControllerBase {
     return [
       '#theme' => 'cat_template',
       '#items' => $rows,
-      '#title' => $this->t('You can submit your cat and look at list of all submitted cats here.'),
+      '#title' => $this->t('Hello! You can add here a photo of your cat.'),
       '#form' => $form,
     ];
   }
