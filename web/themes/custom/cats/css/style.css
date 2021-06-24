@@ -27,3 +27,21 @@
 #form-system-messages{
   display: none;
 }
+.col-md-3.offset-md-3{
+  margin: 100px 100px 100px 150px;
+}
+.row.underline_cats{
+  background: lightgray;
+  border-radius: 50px;
+  margin: 10px 0;
+  padding: 35px;
+
+}
+.image-container{
+  width: 400px;
+  height: 400px;
+}
+.image-container img{
+  border-radius: 50px;
+  height: 100%;
+}

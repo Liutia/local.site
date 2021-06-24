@@ -53,17 +53,10 @@ class LiutiaController extends ControllerBase {
    * Render all cat entries.
    */
   public function report() {
-    $content = [];
-    $content['form'] = $this->form();
-    $headers = [
-      t('Cat name'),
-      t('Email'),
-      t('Submitted'),
-      t('Photo'),
-    ];
     $info = json_decode(json_encode($this->load()), TRUE);
     $info = array_reverse($info);
     $rows = [];
+    $form = $this->form();
     foreach ($info as &$value) {
       $fid = $value['image'];
       $file = File::load($fid);
@@ -77,13 +70,12 @@ class LiutiaController extends ControllerBase {
       $value['image'] = $renderer->render($value['image']);
       array_push($rows, $value);
     }
-    $content['table'] = [
-      '#type' => 'table',
-      '#header' => $headers,
-      '#rows' => $rows,
-      '#empty' => t('No entries available.'),
+    return [
+      '#theme' => 'cat_template',
+      '#items' => $rows,
+      '#title' => $this->t('You can submit your cat and look at list of all submitted cats here.'),
+      '#form' => $form,
     ];
-    return $content;
   }
 
 }
