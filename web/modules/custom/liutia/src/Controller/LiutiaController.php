@@ -66,6 +66,7 @@ class LiutiaController extends ControllerBase {
         '#style_name' => 'large',
         '#uri' => $file->getFileUri(),
       ];
+      $value['images'] = file_url_transform_relative(file_create_url($file->getFileUri()));
       $renderer = \Drupal::service('renderer');
       $value['image'] = $renderer->render($value['image']);
       array_push($rows, $value);
