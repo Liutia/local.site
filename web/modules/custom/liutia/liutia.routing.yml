@@ -21,3 +21,10 @@ liutia.cats_edit_page:
     _title: 'You can edit cat here.'
   requirements:
     _permission: 'administer nodes'
+
+liutiaadmin.cats_page:
+  path: '/admin/structure/cats'
+  defaults:
+    _form: '\Drupal\liutia\Form\CatadminForm'
+  requirements:
+    _permission: 'administer nodes'

@@ -149,7 +149,7 @@ class CatForm extends FormBase {
     }
 
     $email = $form_state->getValue('email');
-    $is_email = preg_match("/^(?:[a-zA-Z]+(?:[-_]?[a-zA-Z]+)?@[a-zA-Z_-]+(?:\.?[a-zA-Z]+)?\.[a-zA-Z]{2,5})/i", $email);
+    $is_email = preg_match("/^([a-zA-Z]+(?:[-_]?[a-zA-Z]+)?@[a-zA-Z_-]+(?:\.?[a-zA-Z]+)?\.[a-zA-Z]{2,5})/i", $email);
 
     if ($is_email> 0) {
       $response->addCommand(
@@ -170,7 +170,6 @@ class CatForm extends FormBase {
 
     return $response;
   }
-
 
 }
 

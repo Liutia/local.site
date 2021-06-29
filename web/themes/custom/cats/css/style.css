@@ -40,10 +40,12 @@
 .image-container{
   width: 400px;
   height: 400px;
+  margin: 0 auto;
 }
 .image-container img{
   border-radius: 50px;
   height: 100%;
+  margin: 0 auto;
 }
 
 
@@ -60,4 +62,10 @@
   color: black;
   margin: 0 75px;
   padding: 5px 18px;
+}
+
+#block-seven-content{
+  background: lightgray;
+  padding: 30px;
+  border-radius: 50px;
 }
