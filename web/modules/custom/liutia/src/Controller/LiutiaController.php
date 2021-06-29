@@ -34,7 +34,13 @@ class LiutiaController extends ControllerBase {
     $form = $this->formBuilder->getForm('\Drupal\liutia\Form\CatForm');
     return $form;
   }
-
+  /**
+   * Return delete button.
+   */
+  public function delete() {
+    $formdelete = $this->formBuilder->getForm('\Drupal\liutia\Form\CatDeleteForm');
+    return $formdelete;
+  }
   /**
    * Get all cats for page.
    *
@@ -44,7 +50,7 @@ class LiutiaController extends ControllerBase {
   public function load() {
     $connection = \Drupal::service('database');
     $query = $connection->select('liutia', 'a');
-    $query->fields('a', ['name', 'mail', 'created', 'image']);
+    $query->fields('a', ['name', 'mail', 'created', 'image', 'id']);
     $result = $query->execute()->fetchAll();
     return $result;
   }
@@ -55,8 +61,9 @@ class LiutiaController extends ControllerBase {
   public function report() {
     $info = json_decode(json_encode($this->load()), TRUE);
     $info = array_reverse($info);
-    $rows = [];
     $form = $this->form();
+    $delete = $this->delete();
+    $rows = [];
     foreach ($info as &$value) {
       $fid = $value['image'];
       $file = File::load($fid);
@@ -74,9 +81,13 @@ class LiutiaController extends ControllerBase {
     return [
       '#theme' => 'cat_template',
       '#items' => $rows,
-      '#title' => $this->t('You can submit your cat and look at list of all submitted cats here.'),
+      '#title' => $this->t('Hello! You can add here a photo of your cat.'),
       '#form' => $form,
+      '#delete' => $delete,
     ];
   }
+
+
+
 
 }

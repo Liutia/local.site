@@ -45,3 +45,19 @@
   border-radius: 50px;
   height: 100%;
 }
+
+
+.deleteCat{
+  background: white;
+  text-decoration: none;
+  color: black;
+  margin: 0 75px;
+  padding: 10px;
+}
+.editCat{
+  background: white;
+  text-decoration: none;
+  color: black;
+  margin: 0 75px;
+  padding: 5px 18px;
+}

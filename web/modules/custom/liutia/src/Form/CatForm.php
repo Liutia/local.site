@@ -130,7 +130,7 @@ class CatForm extends FormBase {
   public function setMessage(array $form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
     $name = $form_state->getValue('name');
-    $is_number =  preg_match('/^[A-Za-z]*$/', $name);
+    $is_number =  preg_match('/\w{2,32}/', $name);
     if ($is_number <= 0) {
       $response->addCommand(
         new HtmlCommand(

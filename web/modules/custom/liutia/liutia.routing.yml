@@ -1,7 +1,15 @@
-anzy.cats_page:
+liutia.cats_page:
   path: '/liutia/cats'
   defaults:
     _controller: '\Drupal\liutia\Controller\LiutiaController::report'
     _title: 'Hello! You can add here a photo of your cat.'
   requirements:
     _permission: 'access content'
+
+liutia.cats_delete_page:
+  path: '/liutia/catsDel/{cid}'
+  defaults:
+    _form: '\Drupal\liutia\Form\CatDeleteForm'
+    _title: 'Remove or not remove?'
+  requirements:
+    _permission: 'administer nodes'

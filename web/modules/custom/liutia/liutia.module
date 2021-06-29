@@ -16,7 +16,7 @@
 function liutia_theme($existing, $type, $theme, $path) {
   return [
     'cat_template' => [
-      'variables' => ['form' => [], 'title' => '', 'items' => [],],
+      'variables' => ['form' => [], 'items' => [], 'delete' => [], 'edit',],
     ],
   ];
 }
