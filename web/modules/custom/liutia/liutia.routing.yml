@@ -13,3 +13,11 @@ liutia.cats_delete_page:
     _title: 'Remove or not remove?'
   requirements:
     _permission: 'administer nodes'
+
+liutia.cats_edit_page:
+  path: '/admin/liutia/catsChange/{cid}'
+  defaults:
+    _form: '\Drupal\liutia\Form\CatChangeForm'
+    _title: 'You can edit cat here.'
+  requirements:
+    _permission: 'administer nodes'

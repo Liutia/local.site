@@ -44,7 +44,7 @@ class CatDeleteForm extends FormBase {
         'event' => 'click',
       ],
     ];
-    $GLOBALS['ctid'] = $cid;
+    $this->ctid = $cid;
     return $form;
   }
 
@@ -54,7 +54,7 @@ class CatDeleteForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $connection = \Drupal::service('database');
     $result = $connection->delete('liutia');
-    $result->condition('id', $GLOBALS['ctid']);
+    $result->condition('id', $this->ctid);
     $result->execute();
   }
 

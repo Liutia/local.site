@@ -10,7 +10,7 @@
         {{ edit }}
       {% endif %}
       {% if user.hasPermission('administer nodes') %}
-        <a href="#" class="editCat" data-dialog-type="modal">{{ 'Edit'|trans }}</a>
+        <a href="/admin/liutia/catsChange/{{ item.id }}" class="editCat">{{ 'Edit'|trans }}</a>
         {{ edit }}
       {% endif %}
     </div>
