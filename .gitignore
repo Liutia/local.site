@@ -26,7 +26,7 @@
 /core
 /vendor
 /drush/contrib/
-/web/sites/default/seting.php
+/web/sites/default/settings.php
 /web/core/
 /web/modules/contrib/
 /web/themes/contrib/
@@ -36,7 +36,7 @@
 /profiles/README.txt
 /themes/README.txt
 /sites/README.txt
-/sites/default/seting.php
+/sites/default/settings.php
 /sites/example.sites.php
 /sites/example.settings.local.php
 /sites/development.services.yml
