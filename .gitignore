@@ -36,7 +36,7 @@
 /profiles/README.txt
 /themes/README.txt
 /sites/README.txt
-/sites/default/settings.php
+/sites/example.settings.php
 /sites/example.sites.php
 /sites/example.settings.local.php
 /sites/development.services.yml
@@ -62,3 +62,6 @@
 
 # Ignore .env files as they are personal
 /.env
+
+
+.gitignore
