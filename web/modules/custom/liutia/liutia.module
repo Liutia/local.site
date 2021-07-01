@@ -1,11 +1,9 @@
 <?php
 
-/**
+/*
  * @file
  * implementation our hook
- */
-
-/**
+ *
  * @param $existing
  * @param $type
  * @param $theme

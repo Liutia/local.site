@@ -96,13 +96,14 @@ class CatChangeForm extends FormBase {
     $this->ctid = $cid;
     return $form;
   }
+
   /**
    * Function that validate email and name input with ajax.
    */
   public function validateAjax(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
     $name = $form_state->getValue('name');
-    $is_number =  preg_match('/\w{2,32}/', $name);
+    $is_number = preg_match('/\w{2,32}/', $name);
     if ($is_number <= 0) {
       $response->addCommand(
         new HtmlCommand(
@@ -123,7 +124,7 @@ class CatChangeForm extends FormBase {
     $email = $form_state->getValue('email');
     $is_email = preg_match("/^(?:[a-zA-Z]+(?:[-_]?[a-zA-Z]+)?@[a-zA-Z_-]+(?:\.?[a-zA-Z]+)?\.[a-zA-Z]{2,5})/i", $email);
 
-    if ($is_email> 0) {
+    if ($is_email > 0) {
       $response->addCommand(
         new HtmlCommand(
           '.result_email',
@@ -131,7 +132,7 @@ class CatChangeForm extends FormBase {
         )
       );
     }
-    if ($is_email<= 0) {
+    if ($is_email <= 0) {
       $response->addCommand(
         new HtmlCommand(
           '.result_email',

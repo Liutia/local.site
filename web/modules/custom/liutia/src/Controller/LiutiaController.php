@@ -34,6 +34,7 @@ class LiutiaController extends ControllerBase {
     $form = $this->formBuilder->getForm('\Drupal\liutia\Form\CatForm');
     return $form;
   }
+
   /**
    * Return delete button.
    */
@@ -41,6 +42,7 @@ class LiutiaController extends ControllerBase {
     $formdelete = $this->formBuilder->getForm('\Drupal\liutia\Form\CatDeleteForm');
     return $formdelete;
   }
+
   /**
    * Get all cats for page.
    *
@@ -86,8 +88,5 @@ class LiutiaController extends ControllerBase {
       '#delete' => $delete,
     ];
   }
-
-
-
 
 }

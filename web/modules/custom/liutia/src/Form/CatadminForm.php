@@ -88,7 +88,6 @@ class CatadminForm extends FormBase {
         '#type' => 'hidden',
         '#value' => $id,
       ];
-
       $value[0] = $name;
       $value[1] = $renderer->render($img);
       $value[2] = $mail;
@@ -98,7 +97,6 @@ class CatadminForm extends FormBase {
       $value[6] = $newId;
       array_push($rows, $value);
     }
-
     $form['table'] = [
       '#type' => 'tableselect',
       '#header' => $headers,

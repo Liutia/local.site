@@ -18,6 +18,7 @@ use Drupal\Core\Url;
  * Provides an Cat form.
  */
 class CatDeleteForm extends FormBase {
+
   /**
    * Contain slug id to delete cat entry.
    *

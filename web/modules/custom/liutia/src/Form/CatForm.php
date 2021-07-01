@@ -2,12 +2,15 @@
 
 namespace Drupal\liutia\Form;
 
+use Drupal\Core\Ajax\InsertCommand;
+use Drupal\Core\Ajax\RedirectCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\file\Entity\File;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Contains \Drupal\liutia\Form\CatForm.
@@ -19,6 +22,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Provides an Cat form.
  */
 class CatForm extends FormBase {
+
   /**
    * The current time.
    *
@@ -57,7 +61,7 @@ class CatForm extends FormBase {
       '#description' => t("Name should be at least 2 characters and less than 32 characters"),
       '#required' => TRUE,
       '#ajax' => [
-        'callback' => '::setMessage',
+        'callback' => '::setMessagea',
         'event' => 'keyup',
       ],
     ];
@@ -71,7 +75,7 @@ class CatForm extends FormBase {
       '#description' => t("example@gmail.com"),
       '#required' => TRUE,
       '#ajax' => [
-        'callback' => '::setMessage',
+        'callback' => '::setMessagea',
         'event' => 'keyup',
       ],
     ];
@@ -124,13 +128,12 @@ class CatForm extends FormBase {
   }
 
   /**
-   * Function that validate email input with ajax.
+   * Function that validate name and email input with ajax.
    */
-
-  public function setMessage(array $form, FormStateInterface $form_state) {
+  public function setMessagea(array $form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
     $name = $form_state->getValue('name');
-    $is_number =  preg_match('/\w{2,32}/', $name);
+    $is_number = preg_match('/\w{2,32}/', $name);
     if ($is_number <= 0) {
       $response->addCommand(
         new HtmlCommand(
@@ -150,8 +153,7 @@ class CatForm extends FormBase {
 
     $email = $form_state->getValue('email');
     $is_email = preg_match("/^([a-zA-Z]+(?:[-_]?[a-zA-Z]+)?@[a-zA-Z_-]+(?:\.?[a-zA-Z]+)?\.[a-zA-Z]{2,5})/i", $email);
-
-    if ($is_email> 0) {
+    if ($is_email > 0) {
       $response->addCommand(
         new HtmlCommand(
           '.result_email',
@@ -159,7 +161,7 @@ class CatForm extends FormBase {
         )
       );
     }
-    if ($is_email<= 0) {
+    if ($is_email <= 0) {
       $response->addCommand(
         new HtmlCommand(
           '.result_email',
@@ -167,10 +169,70 @@ class CatForm extends FormBase {
         )
       );
     }
+    return $response;
 
+    $image = $form_state->getValue('image');
+
+  }
+
+  /**
+   * Function that validate name and email input with ajax.
+   */
+  public function setMessage(array $form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+
+    $name = $form_state->getValue('name');
+    $is_number = preg_match('/\w{2,32}/', $name);
+    $email = $form_state->getValue('email');
+    $is_email = preg_match("/^([a-zA-Z]+(?:[-_]?[a-zA-Z]+)?@[a-zA-Z_-]+(?:\.?[a-zA-Z]+)?\.[a-zA-Z]{2,5})/i", $email);
+    $image = $form_state->getValue('image');
+
+    if ($is_number > 0 && $is_email <= 0) {
+      $response->addCommand(
+        new HtmlCommand(
+          '.result_message',
+          '<div class="my_top_message">' . $this->t('You cat name: %name.', ['%name' => $name])
+        )
+      );
+      $response->addCommand(
+        new HtmlCommand(
+          '.result_email',
+          '<div class="my_top_message">' . $this->t('Not correct email')
+        )
+      );
+    }
+    elseif ($is_number <= 0 && $is_email > 0) {
+      $response->addCommand(
+        new HtmlCommand(
+          '.result_message',
+          '<div class="my_top_message">' . $this->t('Not correct name')
+        )
+      );
+      $response->addCommand(
+        new HtmlCommand(
+          '.result_email',
+          '<div class="my_top_message">' . $this->t('You email: %title.', ['%title' => $email])
+        )
+      );
+    }
+    elseif ($is_number <= 0 && $is_email <= 0) {
+      $response->addCommand(
+        new HtmlCommand(
+          '.result_message',
+          '<div class="my_top_message">' . $this->t('Not correct name')
+        )
+      );
+      $response->addCommand(
+        new HtmlCommand(
+          '.result_email',
+          '<div class="my_top_message">' . $this->t('Not correct email')
+        )
+      );
+    }
+    else {
+      $response->addCommand(new RedirectCommand('/liutia/cats'));
+    }
     return $response;
   }
 
 }
-
-
