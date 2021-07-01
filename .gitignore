@@ -26,6 +26,7 @@
 /core
 /vendor
 /drush/contrib/
+/web/sites/default/seting.php
 /web/core/
 /web/modules/contrib/
 /web/themes/contrib/
@@ -60,4 +61,9 @@
 
 # Ignore .env files as they are personal
 /.env
+
+
+
+
+.gitignore
 
