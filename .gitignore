@@ -7,6 +7,7 @@
 /sites/*/*services*.yml
 /web/sites/*/services.yml
 /web/sites/*/settings.local.php
+/web/sites/*/settings.php
 
 # Ignore paths that may contain user-generated content
 /sites/*/public
@@ -26,7 +27,6 @@
 /core
 /vendor
 /drush/contrib/
-/web/sites/default/settings.php
 /web/core/
 /web/modules/contrib/
 /web/themes/contrib/
