@@ -2,13 +2,13 @@
 
 /**
  * @return
- * Contains \Drupal\liutia\Controller\FirstPageController.
+ * Contains \Drupal\nekromant512\Controller\FirstPageController.
  */
   
-namespace Drupal\liutia\Controller;
+namespace Drupal\nekromant512\Controller;
   
 /**
- * Provides route responses for the liutia module.
+ * Provides route responses for the nekromant512 module.
  */
 class FirstPageController {
   

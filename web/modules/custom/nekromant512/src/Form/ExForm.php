@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\liutia\Form;
+namespace Drupal\nekromant512\Form;
 
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InsertCommand;
@@ -66,7 +66,7 @@ class ExForm extends FormBase {
  }
 
  public function getFormId() {
-   return 'liutia_exform_form';
+   return 'nekromant512_exform_form';
  }
 
  public function submitForm(array &$form, FormStateInterface $form_state) {}

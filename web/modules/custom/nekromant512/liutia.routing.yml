@@ -1,0 +1,15 @@
+nekromant512.first_page:
+  path: 'nekromant512/catss'
+  defaults:
+    _controller: '\Drupal\nekromant512\Controller\FirstPageController::content'
+    _title: 'C.A.T.S'
+  requirements:
+    _permission: 'access content'
+
+nekromant512.example_form:
+  path: '/nekromant512/cats'
+  defaults:
+    _form:  '\Drupal\nekromant512\Form\ExForm'
+    _title: 'C.A.T.S'
+  requirements:
+    _permission: 'access content'
